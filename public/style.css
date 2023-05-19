@@ -1,0 +1,47 @@
+body{
+    word-wrap:break-word;
+  }
+  img{
+    height: 350px;
+  }
+  .wrapper{
+    display: flex;
+  }
+  #sidebar{
+    width: 20%;
+  }
+  .cardWrapper{
+    display: flex;
+    flex-wrap: wrap;
+  }
+  .gallery{
+    display: flex;
+    flex-wrap: wrap;
+  }
+  .card:hover{
+    transform: scale(103%);
+  }
+  .card-body{
+    color: black;
+  }
+  #btns{
+    margin-left: 40%;
+  }
+  #trashCan{
+    color: white;
+  }
+  #keyBadge{
+    margin-left: -12%;
+  }
+  #productBadge{
+    margin-left: -34%;
+  }
+  #shareBadge{
+    margin-left: -44%;
+  }
+  #rating{
+    color: gold;
+  }
+  #logout{
+    margin-left: 61%;
+  }

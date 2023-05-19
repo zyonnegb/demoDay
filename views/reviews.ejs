@@ -1,0 +1,38 @@
+<%- include('partials/header') -%>
+<div class="container mt-3">
+  <p class="fs-3 mx-auto text-center">My Reviews</p>
+  
+  <form action="/remover" method="POST">
+    <select class="form-select form-select-lg mb-3 fs-3" aria-label=".form-select-lg example" name="name">
+      <% for(var i=0; i<reviews.length; i++) {%>
+        <option class="" value="<%= reviews[i].productName %>" name="name" ><%= reviews[i].productName %> - <%= reviews[i].key %></option>
+      <% } %>
+    </select>
+    <button type="submit" class="btn btn-outline-danger w-100 fs-2 mt-3">Delete Review</button>
+  </form>
+
+  <hr class="w-75 mx-auto mt-4">
+
+<% for(var i=0; i<reviews.length; i++) {%>
+  <div class="card mb-3 mt-5 mx-auto" style="max-width: 800px;">
+    <div class="row g-0">
+      <div class="col-md-4">
+        <img src="<%= reviews[i].image%>" class="img-fluid rounded-start" alt="...">
+      </div>
+      <div class="col-md-8">
+        <div class="card-body">
+          <h5 class="card-title fw-bold fs-3"><%= reviews[i].productName %></h5>
+          <hr>
+          <p class="card-text fs-4"><%= reviews[i].productReview %></p>
+          <p class="card-text fs-4"><span id="rating"><%= reviews[i].rating %></span></p>
+          <hr>
+          <p class="card-text fw-bold fs-4"><%= reviews[i].key %></p>
+          <p class="card-text fw-bold"><%= reviews[i].createdAt %></p>
+        </div>
+      </div>
+    </div>
+  </div>
+<% } %>
+
+</div>
+<%- include('partials/footer') -%>

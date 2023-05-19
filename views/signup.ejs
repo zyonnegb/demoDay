@@ -1,0 +1,56 @@
+<%- include('partials/loggedOutHeader') -%>
+
+<div class="container">
+  <div class="col-sm-6 col-sm-offset-3 mx-auto w-75 mt-5">
+      <h1>Signup To Browse</h1>
+      <!-- Sign Up FORM -->
+      <form action="/signup" method="post">
+        <div class="input-group input-group-lg mt-4">
+          <span class="input-group-text" id="inputGroup-sizing-lg">Username</span>
+          <input type="text" class="form-control" aria-label="Sizing example input" aria-describedby="inputGroup-sizing-lg" name="userName">
+        </div>
+        <div class="input-group input-group-lg mt-3">
+            <span class="input-group-text" id="inputGroup-sizing-lg">Email</span>
+            <input type="email" class="form-control" aria-label="Sizing example input" aria-describedby="inputGroup-sizing-lg" name="email">
+        </div>
+        <div class="input-group input-group-lg mt-3">
+            <span class="input-group-text" id="inputGroup-sizing-lg">Password</span>
+            <input type="password" class="form-control" aria-label="Sizing example input" aria-describedby="inputGroup-sizing-lg" name="password">
+        </div>
+        <div class="input-group input-group-lg mt-3">
+          <span class="input-group-text" id="inputGroup-sizing-lg">Confirm Password</span>
+          <input type="password" class="form-control" aria-label="Sizing example input" aria-describedby="inputGroup-sizing-lg" name="confirmPassword">
+      </div>
+        <button type="submit" class="btn btn-outline-secondary btn-lg mt-4 w-100 fs-3" type="button" id="button-addon2">Sign Up</button>
+      </form>
+      <hr>
+      <span class="fw-bold fs-5">Already have an account? <a href="/login" class="text-decoration-none">Login</a></span>
+  </div>
+  </div>
+    <!-- <main class="container">
+        <div class="row justify-content-center">
+            <section class="col-6 mt-5">
+                <form action="/signup" method="POST">
+                    <div class="mb-3">
+                        <label for="userName" class="form-label">User Name</label>
+                        <input type="text" class="form-control" id="userName" name="userName">
+                      </div>
+                    <div class="mb-3">
+                      <label for="exampleInputEmail1" class="form-label">Email address</label>
+                      <input type="email" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp" name="email">
+                      <div id="emailHelp" class="form-text">We'll never share your email with anyone else.</div>
+                    </div>
+                    <div class="mb-3">
+                      <label for="password" class="form-label">Password</label>
+                      <input type="password" class="form-control" id="password" name="password">
+                    </div>
+                    <div class="mb-3">
+                        <label for="confirmPassword" class="form-label">Confirm Password</label>
+                        <input type="password" class="form-control" id="confirmPassword" name="confirmPassword">
+                      </div>
+                    <button type="submit" class="btn btn-primary">Submit</button>
+                  </form>
+            </section>
+        </div>
+    </main> -->
+<%- include('partials/footer') -%>

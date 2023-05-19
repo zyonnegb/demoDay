@@ -1,0 +1,26 @@
+<%- include('partials/header') -%>
+
+<div class="container">
+<div class="col-sm-6 col-sm-offset-3 mx-auto mt-5 w-75">
+  <h1>Create A Key</h1>
+  <p class="fs-5 fw-bold">These measurements will be used to generate a key, which you can use to search for images.</p>
+  <hr>    
+  <form action="/save" method="post">
+      <label for="heightArea" class="form-label fs-3 mt-3">Enter Your Height</label>
+      <div class="input-group mb-3" id="heightArea">
+          <input type="number" class="form-control fs-3" placeholder="Feet" aria-label="Username" name="feet">
+          <span class="input-group-text fs-3">feet</span>
+          <input type="number" class="form-control fs-3" placeholder="Inches" aria-label="Server" name="inches">
+          <span class="input-group-text fs-3">inches</span>
+      </div>
+      <label for="weightArea" class="form-label fs-3 mt-3">Enter Your Weight</label>
+      <div class="input-group mb-3" id="weightArea">
+          <input type="number" class="form-control fs-3" placeholder="Weight" aria-label="Username" value="" name="lbs">
+          <span class="input-group-text fs-3">lbs.</span>
+      </div>
+      <button type="submit" class="btn btn-outline-success w-100 fs-2 mt-3">Generate Key</button>
+  </form>
+</div>
+</div>
+
+<%- include('partials/footer') -%>

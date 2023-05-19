@@ -1,0 +1,48 @@
+<%- include('partials/header') -%>
+
+<div class="container">
+  <div class="col-sm-6 col-sm-offset-3 mx-auto mt-3 w-75">
+    <h1 class="fs-2">Upload A Photo Review</h1>
+    <p class="fs-5 fw-bold">Use your key to upload photos of your clothing with a review.</p>
+    <hr>    
+    <form action="/review" enctype="multipart/form-data" method="POST">
+      <label for="weightArea" class="form-label fs-3 mt-0">Enter Product Name</label>
+      <div class="input-group mb-3" id="weightArea">
+          <input type="text" class="form-control fs-3" placeholder="ex: Nike Sweats" aria-label="Username" value="" name="productName" required>
+      </div>  
+      <label for="weightArea" class="form-label fs-3 mt-0">Enter Product Size</label>
+      <div class="input-group mb-3" id="weightArea">
+          <input type="text" class="form-control fs-3" placeholder="ex: Small" aria-label="Username" value="" name="productSize" required>
+      </div> 
+      <label for="weightArea" class="form-label fs-3 mt-0">Enter Product Link</label>
+      <div class="input-group mb-3" id="weightArea">
+          <input type="text" class="form-control fs-3" placeholder="ex: https://nike.com/nikeSweats" aria-label="Username" value="" name="productLink">
+      </div> 
+      <label for="weightArea" class="form-label fs-3 mt-0">Enter Product Review</label>
+      <div class="input-group mb-3" id="weightArea">
+        <textarea class="form-control fs-3" aria-label="With textarea" placeholder="Product Review" name="productReview" required></textarea>
+      </div>  
+      <label for="heightArea" class="form-label fs-3 mt-0">Select Rating</label>
+      <select class="form-select form-select-lg mb-3 fs-3" aria-label=".form-select-lg example" name="rating" required>
+          <option class="" value="★☆☆☆☆" >1/5</option>
+          <option class="" value="★★☆☆☆" >2/5</option>
+          <option class="" value="★★★☆☆" >3/5</option>
+          <option class="" value="★★★★☆" >4/5</option>
+          <option class="" value="★★★★★" >5/5</option>
+      </select>
+      <label for="weightArea" class="form-label fs-3 mt-0">Upload Photo</label>
+      <div class="input-group mb-3" id="weightArea">
+        <input type="file" name="file" class="form-control fs-3" required></input>
+      </div>  
+      <label for="heightArea" class="form-label fs-3 mt-0">Select Key To Upload To</label>
+      <select class="form-select form-select-lg mb-3 fs-3" aria-label=".form-select-lg example" name="key" required>
+        <% for(var i=0; i<keys.length; i++) {%>
+          <option class="" value="<%= keys[i].key %>" name="key" ><%= keys[i].key %></option>
+        <% } %>
+      </select>
+      <button type="submit" class="btn btn-outline-success w-100 fs-2 mt-3">Upload Photo</button>
+  </form>
+  </div>
+  </div>
+
+<%- include('partials/footer') -%>

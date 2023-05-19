@@ -1,0 +1,24 @@
+<%- include('partials/header') -%>
+
+<div class="container">
+<div class="col-sm-6 col-sm-offset-3 mx-auto mt-5 w-75">    
+  <h1>Delete A Key</h1>
+  <p class="fs-5 fw-bold">Select a key to be permanently deleted.</p>
+  <hr>
+
+
+  <form action="/remove" method="POST">
+      <label for="heightArea" class="form-label fs-3 mt-3">Select Key</label>
+      <select class="form-select form-select-lg mb-3 fs-3" aria-label=".form-select-lg example" name="key">
+        <% for(var i=0; i<keys.length; i++) {%>
+          <option class="" value="<%= keys[i].key %>" name="key" ><%= keys[i].key %></option>
+        <% } %>
+      </select>
+      <button type="submit" class="btn btn-outline-danger w-100 fs-2 mt-3">Delete Key</button>
+  </form>
+
+  
+</div>
+</div>
+
+<%- include('partials/footer') -%> 
