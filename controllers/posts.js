@@ -102,6 +102,9 @@ module.exports = {
     if (lbs < 5 || lbs >= 1000){ res.redirect("/create")
       console.log('Enter Correct Lbs')
       return }
+    if(lbs % 5 != 0){res.redirect("/create")
+      console.log('Must Be Multiple Of 5')
+      return }
       try {
       await Key.create({
         feet: feet,
@@ -144,10 +147,11 @@ module.exports = {
 //Create A Photo Review
 createReview: async (req, res) => {
     console.log(req.body)
+    let productName = req.body.productName.toUpperCase()
     try {
     const image = await cloudinary.uploader.upload(req.file.path);
     await Review.create({
-      productName: req.body.productName,
+      productName: productName,
       productSize: req.body.productSize,
       productReview: req.body.productReview,
       productLink: req.body.productLink,

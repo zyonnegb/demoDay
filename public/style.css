@@ -1,47 +1,180 @@
 body{
-    word-wrap:break-word;
-  }
-  img{
-    height: 350px;
-  }
-  .wrapper{
-    display: flex;
-  }
-  #sidebar{
-    width: 20%;
-  }
-  .cardWrapper{
-    display: flex;
-    flex-wrap: wrap;
-  }
-  .gallery{
-    display: flex;
-    flex-wrap: wrap;
-  }
-  .card:hover{
-    transform: scale(103%);
-  }
-  .card-body{
-    color: black;
-  }
-  #btns{
-    margin-left: 40%;
-  }
-  #trashCan{
-    color: white;
-  }
-  #keyBadge{
-    margin-left: -12%;
-  }
-  #productBadge{
-    margin-left: -34%;
-  }
-  #shareBadge{
-    margin-left: -44%;
-  }
-  #rating{
-    color: gold;
-  }
-  #logout{
-    margin-left: 61%;
-  }
+ word-wrap:break-word;
+ background-color: rgb(10, 35, 78);
+ color: white;
+}
+img{
+  height: 350px;
+}
+.navbar-expand-lg .navbar-nav .nav-link{
+  color: rgb(10, 35, 78);
+}
+.navbar-brand{
+  color: rgb(10, 35, 78);
+}
+.navbar-brand:hover{
+  color: rgb(10, 35, 78);
+  transform: scale(103%);
+}
+#nav{
+  background-color: rgb(252, 252, 252);
+  z-index:999
+}
+.btn{
+  background-color: white;
+  color: rgb(10, 35, 78)
+}
+.btn:hover{
+  background-color: white;
+  color: rgb(10, 35, 78)
+}
+.wrapper{
+  display: flex;
+}
+.cardWrapper{
+  display: flex;
+  flex-wrap: wrap;
+}
+.gallery{
+  display: flex;
+  flex-wrap: wrap;
+}
+.card:hover{
+  transform: scale(103%);
+}
+.card-body{
+  color: rgb(10, 35, 78)
+}
+input, select, .btn{
+  box-shadow: 0px 0px 5px white;
+}
+.card{
+  color: rgb(10, 35, 78);
+  box-shadow: 0px 0px 5px white;
+
+}
+.list-group-item{
+  color: rgb(10, 35, 78);
+}
+#btns{
+  margin-left: 40%;
+}
+#trashCan, .fa-trash{
+  color: rgb(10, 35, 78);
+}
+#keyBadge{
+  margin-left: -12%;
+  background-color: white;
+  color: rgb(10, 35, 78);
+}
+#productBadge{
+  margin-left: -34%;
+  background-color: white;
+  color: rgb(10, 35, 78);;
+}
+#productBadge:hover{
+  transform: scale(105%);
+}
+#shareBadge{
+  margin-left: -44%;
+}
+#rating{
+  color: gold;
+}
+#logout{
+  margin-left: 58%;
+  background-color: rgb(10, 35, 78);
+  color: white;
+}
+#logout:hover{
+  background-color: white;
+  color: rgb(10, 35, 78);
+  border: 2px solid rgb(10, 35, 78) ;
+}
+.searchLabel{
+  box-shadow: 0px 0px 5px white;
+}
+.fa-grip-lines-vertical{
+  color: rgb(10, 35, 78);
+}
+.nav-item:hover{
+  transform: scale(103%);
+}
+.searchBtn:hover{
+  transform: scale(100.5%);
+}
+.footer {
+  position: fixed;
+  left: 0;
+  bottom: 0;
+  width: 100%;
+  background-color: red;
+  color: white;
+  text-align: center;
+}
+
+.top{
+  background-color: white;
+  width: 4rem;
+  height: 4rem;
+  border-radius: 50%;
+  margin: 2rem;
+  margin-left: 129rem;
+  float: right;
+
+}
+.fa-up-long{
+  color: rgb(10, 35, 78);
+  font-size: 2.5rem;
+  margin-top: .7rem;
+}
+
+/* In order to get the bouncing effect on hover the following code will help: */
+
+.footer:hover {
+    transform: scale(105%);
+   animation: bounce 1s infinite; 
+   -webkit-animation: bounce 1s infinite; 
+   -moz-animation: bounce 1s infinite;
+   -o-animation: bounce 1s infinite;
+}
+/* You now need to a
+nimate the bounce using CSS3 animations and keyframes: */
+
+/* //CSS3 Bounce Animation */
+@-webkit-keyframes bounce {
+    0%,  
+    100% {
+       -webkit-transform: translateY(0);
+    } 
+    50% {
+        -webkit-transform: translateY(-10px);
+    }
+}
+@-moz-keyframes bounce {
+    0%, 
+    100% {
+       -moz-transform: translateY(0);
+    }
+    50% {
+       -moz-transform: translateY(-10px);
+    }
+}
+@-o-keyframes bounce {
+    0%,
+    100% {
+       -o-transform: translateY(0);
+    }
+    50% {
+       -o-transform: translateY(-10px);
+    }
+}
+@keyframes bounce {
+    0%,  
+    100% {
+        transform: translateY(0);
+    }
+    50% {
+        transform: translateY(-10px);
+    }
+}

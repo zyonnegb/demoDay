@@ -1,53 +1,55 @@
 <%- include('partials/header') -%>
-<div class="container mt-3">
-  <p class="fs-3 mx-auto text-center">Search For Reviews By Key</p>
-  <form action="/search" method="get">
-    <div class="mb-3  mx-auto">
-      <div class="input-group mb-3">
-        <span class="input-group-text fs-4">Enter Product Name</span>
-        <input type="text" class="form-control fs-4" placeholder="ex: Nike" aria-label="Server" name="product">
+<body>
+  <div class="container mt-3">
+    <p id="#" class="fs-2 mx-auto text-center text-white fw-bold mt-4">Search For Review By Key <i class="fa fa-key fs-3 "></i></p>
+    <form action="/search" method="get">
+      <div class="mb-3  mx-auto">
+
+        <div class="input-group mb-3">
+          <span class="input-group-text fs-4 searchLabel">Enter Product Name</span>
+          <input type="text" class="form-control fs-4" placeholder="ex: Nike Ski Mask" aria-label="Server" name="product">
+          <label class="input-group-text fs-4 searchLabel ms-3" for="inputGroupSelect01">Select Key</label>
+          <select class="form-select fs-4" id="inputGroupSelect01" name="key">
+            <% for(var i=0; i<keys.length; i++) {%>
+            <option class="" value="<%= keys[i].key %>" name="key" ><%= keys[i].key %></option>
+            <% } %>
+          </select>
+        </div>
+
       </div>
-      <div class="input-group mb-3">
-        <label class="input-group-text fs-4" for="inputGroupSelect01">Select Key</label>
-        <select class="form-select fs-4" id="inputGroupSelect01" name="key">
-          <% for(var i=0; i<keys.length; i++) {%>
-          <option class="" value="<%= keys[i].key %>" name="key" ><%= keys[i].key %></option>
-          <% } %>
-        </select>
-      </div>
-    </div>
-    <button type="submit" class="btn btn-primary w-100 fs-4 mt-2">Search</button>
-  </form>
-</div>
-
-
-
-
-<hr class="w-75 mx-auto mt-4">
-
-<div class="cardWrapper mx-auto ms-4">
-  <% for(var i=0; i<reviews.length; i++) {%>
-    <a href="<%= reviews[i].productLink %>" class="text-decoration-none" target="_blank">
-    <div class="card mx-4 mt-5" style="width: 28rem;">
-    <img src="<%= reviews[i].image%>" class="card-img-top" alt="...">
-    <div class="card-body">
-      <h5 class="card-title fs-3"><%= reviews[i].productName %></h5>
-      <span class="card-text fs-5 fw-bold">User Review: </span><span class="fs-5"><%= reviews[i].productReview %></span>
-    </div>
-    <ul class="list-group list-group-flush">
-      <li class="list-group-item fs-4">Size: <%= reviews[i].productSize %></li>
-      <li class="list-group-item fs-4">Reviewer: <%= reviews[i].user %></li>
-      <li class="list-group-item fs-4">Rating: <span id="rating"><%= reviews[i].rating %></span></li>
-    </ul>
-    <span id="keyBadge" class="position-absolute top-0 start-100 translate-middle badge rounded-pill bg-danger fs-5">
-      <%= reviews[i].key %>
-    </span>
-    <a href="<%= reviews[i].productLink %>" target="_blank"><span id="productBadge" class="position-absolute top-0 start-100 translate-middle badge rounded-pill bg-success fs-5">
-      <i class="fa fa-shopping-cart fs-5" aria-hidden="true"></i></span>
-    </span>
-    </a>
+      <button type="submit" class="btn searchBtn w-100 fs-4">Search</button>
+    </form>
   </div>
-  </a>
-  <% } %>
-</div>
+
+
+
+
+  <hr class="w-75 mx-auto mt-5">
+
+  <div class="cardWrapper mx-auto ms-5">
+    <% for(var i=0; i<reviews.length; i++) {%>
+      <a href="<%= reviews[i].productLink %>" class="text-decoration-none" target="_blank">
+      <div class="card mx-4 mt-5" style="width: 29rem;">
+      <img src="<%= reviews[i].image%>" class="card-img-top" alt="...">
+      <div class="card-body">
+        <h5 class="card-title fs-3 fw-bold"><%= reviews[i].productName %></h5>
+        <span class="card-text fs-5 fw-bold">User Review: </span><span class="fs-5"><%= reviews[i].productReview %></span>
+      </div>
+      <ul class="list-group list-group-flush">
+        <li class="list-group-item fs-4">Size: <%= reviews[i].productSize %></li>
+        <li class="list-group-item fs-4">Reviewer:</i> <%= reviews[i].user %></li>
+        <li class="list-group-item fs-4">Rating: <span id="rating"><%= reviews[i].rating %></span></li>
+      </ul>
+      <span id="keyBadge" class="position-absolute top-0 start-100 translate-middle badge rounded-pill fs-5">
+        <%= reviews[i].key %>
+      </span>
+      <a href="<%= reviews[i].productLink %>" target="_blank"><span id="productBadge" class="position-absolute top-0 start-100 translate-middle badge rounded-pill fs-7">
+        <i class="fa fa-shopping-cart fs-4" aria-hidden="true"></i></span>
+      </span>
+      </a>
+    </div>
+    </a>
+    <% } %>
+  </div>
+</body>
 <%- include('partials/footer') -%>
