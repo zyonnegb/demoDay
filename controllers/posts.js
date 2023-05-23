@@ -1,7 +1,6 @@
 const cloudinary = require("../middleware/cloudinary");
 const nodemailer = require('nodemailer');
 require('dotenv').config();
-
 const Key = require("../models/Key")
 const Review = require("../models/Review")
 
@@ -13,6 +12,7 @@ module.exports = {
     console.log(req.body)
     let key = req.body.productKey
     let product = req.body.productName
+    let link = req.body.productLink
     let review = req.body.productReview
     let size = req.body.productSize
     let user = req.body.user
@@ -36,11 +36,13 @@ module.exports = {
         to: email,
         subject: `${product} Review - ${key}`,
         text: 
-        `Product - ${product}
+        `
+        Product - ${product}
+        Link - ${link}
         Size - ${size}
         Review - ${review}
         Rated - ${rating}
-        Reviewd By - ${user}
+        Reviewed By - ${user}
         `
       };
       transporter.sendMail(mailOptions, function(error, info){
