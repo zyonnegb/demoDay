@@ -1,9 +1,59 @@
 const cloudinary = require("../middleware/cloudinary");
+const nodemailer = require('nodemailer');
 const Key = require("../models/Key")
 const Review = require("../models/Review")
 
 
+
+
 module.exports = {
+  sendEmail: async (req, res) => {
+    console.log(req.body)
+    let key = req.body.productKey
+    let product = req.body.productName
+    let review = req.body.productReview
+    let size = req.body.productSize
+    let user = req.body.user
+    let rating = req.body.rating
+    let email = req.body.email
+    try {
+      var transporter = nodemailer.createTransport({
+        service: 'gmail',
+        host: 'smtp.gmail.com',
+        port: 465,
+        secure: true,
+        auth: {
+          user: 'swiqo10@gmail.com',
+          pass: 'xleolfsxnhvdzrhh'
+        }
+      });
+      var mailOptions = {
+        from: 'swiqo10@gmail.com',
+        to: email,
+        subject: `${product} Review - ${key}`,
+        text: 
+        `Product - ${product}
+        Size - ${size}
+        Review - ${review}
+        Rated - ${rating}
+        Reviewd By - ${user}
+        `
+      };
+      transporter.sendMail(mailOptions, function(error, info){
+        if (error) {
+          console.log(error);
+        } else {
+          console.log('Saved! ' + info.response);
+        }
+      });
+      res.redirect("/browse");
+
+    } catch (err) { 
+      console.log(err);
+    }
+  },
+
+
 
   // ---------- Get Routes
   // Gets Browse Page
@@ -12,7 +62,6 @@ module.exports = {
       const keys = await Key.find({userEmail: req.user.email});
       const reviews = await Review.find();
       res.render("browse.ejs",{ keys: keys, reviews: reviews});
-    
     } catch (err) {
       console.log(err);
     }
@@ -147,7 +196,7 @@ module.exports = {
 //Create A Photo Review
 createReview: async (req, res) => {
     console.log(req.body)
-    let productName = req.body.productName.toUpperCase()
+    let productName = req.body.productName
     try {
     const image = await cloudinary.uploader.upload(req.file.path);
     await Review.create({

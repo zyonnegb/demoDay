@@ -7,24 +7,29 @@ img{
   height: 350px;
 }
 .navbar-expand-lg .navbar-nav .nav-link{
-  color: rgb(10, 35, 78);
+  color: white;
+}
+.navbar-expand-lg .navbar-nav .nav-link:hover{
+  color: #ee83e5;
 }
 .navbar-brand{
-  color: rgb(10, 35, 78);
+  color: #ee83e5
 }
 .navbar-brand:hover{
-  color: rgb(10, 35, 78);
+  color: #ee83e5;
   transform: scale(103%);
 }
+
 #nav{
-  background-color: rgb(252, 252, 252);
+  background-color: rgba(17, 0, 32, 0.5);
+
   z-index:999
 }
-.btn{
+.whiteBtn{
   background-color: white;
   color: rgb(10, 35, 78)
 }
-.btn:hover{
+.whiteBtn:hover{
   background-color: white;
   color: rgb(10, 35, 78)
 }
@@ -45,7 +50,7 @@ img{
 .card-body{
   color: rgb(10, 35, 78)
 }
-input, select, .btn{
+input, select{
   box-shadow: 0px 0px 5px white;
 }
 .card{
@@ -68,7 +73,7 @@ input, select, .btn{
   color: rgb(10, 35, 78);
 }
 #productBadge{
-  margin-left: -34%;
+  margin-left: -33%;
   background-color: white;
   color: rgb(10, 35, 78);;
 }
@@ -83,13 +88,14 @@ input, select, .btn{
 }
 #logout{
   margin-left: 58%;
-  background-color: rgb(10, 35, 78);
+  background-color: #ee83e5;
   color: white;
+  border: 0px;
 }
 #logout:hover{
-  background-color: white;
-  color: rgb(10, 35, 78);
-  border: 2px solid rgb(10, 35, 78) ;
+  color: white;
+  border: 2px solid #ee83e5 ;
+  transform: scale(104%);
 }
 .searchLabel{
   box-shadow: 0px 0px 5px white;
@@ -100,8 +106,15 @@ input, select, .btn{
 .nav-item:hover{
   transform: scale(103%);
 }
+.searchBtn{
+  background-color: #ee83e5;
+  color: white;
+}
 .searchBtn:hover{
+  color: white;
+  border: 2px solid #ee83e5 ;
   transform: scale(100.5%);
+  box-shadow: 0px 0px 5px #ee83e5 ;
 }
 .footer {
   position: fixed;
@@ -128,6 +141,181 @@ input, select, .btn{
   font-size: 2.5rem;
   margin-top: .7rem;
 }
+#emailBadge{
+  margin-left: -43%;
+  background-color: white;
+  color: rgb(10, 35, 78);;
+  border: 0px;
+}
+.modalBtn{
+  color: rgb(10, 35, 78);
+  border: 1px solid rgb(10, 35, 78);;
+}
+.modalBtn:hover{
+  background-color: rgb(10, 35, 78);
+  color: white;
+  border: 1px solid rgb(10, 35, 78);;
+}
+.links{
+  margin-left: -11.5rem;
+  padding-top: .75rem;
+}
+body > div:nth-child(4) > div > div.tokenInfo > div.price.fs-4 > p > i{
+  width: 5rem;
+  height: 5rem;
+  color: white;
+  z-index: 999;
+}
+code {
+  font-family: source-code-pro, Menlo, Monaco, Consolas, "Courier New", monospace;
+}
+#keyKey{
+  font-family: 'Roboto';
+}
+.newCards{
+  display: flex;
+  flex-wrap: wrap;
+  align-items: baseline;
+}
+.nft {
+  user-select: none;
+  max-width: 30rem;
+  margin: auto;
+  margin-top: 1rem;
+  margin-bottom: 1rem;
+  border: 1px solid #ffffff22;
+  background-color: #282c34;
+  background: linear-gradient(0deg, #282c34 0%, rgba(17, 0, 32, 0.5) 100%);
+  box-shadow: 0 7px 20px 5px #00000088;
+  border-radius: 0.7rem;
+  backdrop-filter: blur(7px);
+  -webkit-backdrop-filter: blur(7px);
+  overflow: hidden;
+  transition: 0.5s all;
+}
+.nft hr {
+  width: 100%;
+  border: none;
+  border-bottom: 1px solid #88888855;
+  margin-top: 0;
+}
+.nft ins {
+  text-decoration: none;
+}
+.nft .main {
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+  padding: 1rem;
+}
+.nft .main .tokenImage {
+  border-radius: 0.5rem;
+  max-width: 100%;
+  height: 25rem;
+  object-fit: cover;
+}
+.nft .main .description {
+  margin: 0.5rem 0;
+  color: #a89ec9;
+}
+.nft .main .tokenInfo {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+.nft .main .tokenInfo .price {
+  display: flex;
+  align-items: center;
+  color: #ee83e5;
+  font-weight: 700;
+}
+.nft .main .tokenInfo .price ins {
+  margin-left: -0.3rem;
+  margin-right: 0.5rem;
+}
+.nft .main .tokenInfo .duration {
+  display: flex;
+  align-items: center;
+  color: #a89ec9;
+  margin-right: 0.2rem;
+}
+.nft .main .tokenInfo .duration ins {
+  margin: 0.5rem;
+  margin-bottom: 0.4rem;
+}
+.nft .main .creator {
+  display: flex;
+  align-items: center;
+  margin-top: 0.2rem;
+  margin-bottom: -0.3rem;
+}
+.nft .main .creator ins {
+  color: #a89ec9;
+  text-decoration: none;
+}
+.nft .main .creator .wrapper {
+  display: flex;
+  align-items: center;
+  border: 1px solid #ffffff22;
+  padding: 0.3rem;
+  margin: 0;
+  margin-right: 0.5rem;
+  border-radius: 100%;
+  box-shadow: inset 0 0 0 4px #000000aa;
+}
+.nft .main .creator .wrapper img {
+  border-radius: 100%;
+  border: 1px solid #ffffff22;
+  width: 2rem;
+  height: 2rem;
+  object-fit: cover;
+  margin: 0;
+}
+.nft ::before {
+  position: fixed;
+  content: "";
+  box-shadow: 0 0 100px 40px #ffffff08;
+  top: -10%;
+  left: -100%;
+  transform: rotate(-45deg);
+  height: 60rem;
+  transition: 0.7s all;
+}
+.nft:hover {
+  border: 1px solid #ffffff44;
+  box-shadow: 0 7px 50px 10px #000000aa;
+  transform: scale(1.015);
+  filter: brightness(1.3);
+}
+.nft:hover ::before {
+  filter: brightness(0.5);
+  top: -100%;
+  left: 200%;
+}
+
+.bg {
+  position: fixed;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+}
+.bg h1 {
+  font-size: 20rem;
+  filter: opacity(0.5);
+}
+.btnCard{
+  background-color: #ee83e5 ;;
+  color: white;
+}
+.btnCard:hover{
+  color: white;
+  border: 2px solid #ee83e5 ;
+  transform: scale(104%);
+  box-shadow: 0px 0px 5px #ee83e5 ;
+}
+
+
+
 
 /* In order to get the bouncing effect on hover the following code will help: */
 

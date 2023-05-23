@@ -6,6 +6,7 @@ const homeController = require("../controllers/home");
 const postsController = require("../controllers/posts");
 const { ensureAuth, ensureGuest } = require("../middleware/auth");
 
+
 // ------- Get Routes
 router.get("/", homeController.getIndex);
 
@@ -13,6 +14,8 @@ router.get("/search", ensureAuth, postsController.getSearch);
 router.get("/browse", ensureAuth, postsController.getBrowse);
 router.get("/reviews", ensureAuth, postsController.getReviews);
 router.get("/upload", ensureAuth, postsController.getUpload);
+
+router.post("/sendEmail", ensureAuth, postsController.sendEmail);
 
 // Key Pages
 router.get("/view", ensureAuth, postsController.getView);
