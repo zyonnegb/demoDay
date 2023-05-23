@@ -1,5 +1,7 @@
 const cloudinary = require("../middleware/cloudinary");
 const nodemailer = require('nodemailer');
+require('dotenv').config();
+
 const Key = require("../models/Key")
 const Review = require("../models/Review")
 
@@ -16,6 +18,8 @@ module.exports = {
     let user = req.body.user
     let rating = req.body.rating
     let email = req.body.email
+    const password = process.env.PASSWORD;
+
     try {
       var transporter = nodemailer.createTransport({
         service: 'gmail',
@@ -24,7 +28,7 @@ module.exports = {
         secure: true,
         auth: {
           user: 'swiqo10@gmail.com',
-          pass: 'xleolfsxnhvdzrhh'
+          pass: password
         }
       });
       var mailOptions = {

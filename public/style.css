@@ -126,8 +126,9 @@ input, select{
   text-align: center;
 }
 
+
 .top{
-  background-color: white;
+  background-color: rgba(17, 0, 32, 0.5);
   width: 4rem;
   height: 4rem;
   border-radius: 50%;
@@ -137,7 +138,7 @@ input, select{
 
 }
 .fa-up-long{
-  color: rgb(10, 35, 78);
+  color: #ee83e5;;
   font-size: 2.5rem;
   margin-top: .7rem;
 }
