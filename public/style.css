@@ -132,8 +132,8 @@ input, select{
 
 .top{
   background-color: rgba(17, 0, 32, 0.5);
-  width: 4rem;
-  height: 4rem;
+  width: 5rem;
+  height: 5rem;
   border-radius: 50%;
   margin: 2rem;
   margin-left: 129rem;
@@ -143,7 +143,7 @@ input, select{
 .fa-up-long{
   color: #ee83e5;;
   font-size: 2.5rem;
-  margin-top: .7rem;
+  margin-top: 1.2rem;
 }
 #emailBadge{
   margin-left: -43%;
