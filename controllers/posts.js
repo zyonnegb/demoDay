@@ -17,7 +17,7 @@ module.exports = {
     let size = req.body.productSize
     let user = req.body.user
     let rating = req.body.rating
-    let email = req.body.email
+    let email = req.user.email
     const password = process.env.PASSWORD;
 
     try {

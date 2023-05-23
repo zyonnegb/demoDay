@@ -13,7 +13,10 @@ img{
   color: #ee83e5;
 }
 .navbar-brand{
-  color: #ee83e5
+  color: white;
+}
+#exampleModal{
+  color: red;
 }
 .navbar-brand:hover{
   color: #ee83e5;
@@ -178,10 +181,13 @@ code {
   flex-wrap: wrap;
   align-items: baseline;
 }
+.Flex{
+  display: flex;
+}
 .nft {
   user-select: none;
   max-width: 30rem;
-  margin: auto;
+  margin:  auto;
   margin-top: 1rem;
   margin-bottom: 1rem;
   border: 1px solid #ffffff22;

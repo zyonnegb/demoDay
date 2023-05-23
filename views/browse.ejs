@@ -1,86 +1,79 @@
 <%- include('partials/header') -%>
-<body>
-  <div class="container mt-3">
-    <p id="#" class="fs-2 mx-auto text-center text-white fw-bold mt-4">Search Reviews</p>
-    <form action="/search" method="get">
-      <div class="mb-3  mx-auto">
 
-        <div class="input-group mb-3">
-          <span class="input-group-text fs-4 searchLabel fw-bold">Product Name</span>
-          <input type="text" class="form-control fs-4" placeholder="ex: Nike Ski Mask" aria-label="Server" name="product">
-          <label class="input-group-text fs-4 searchLabel ms-3 fw-bold" for="inputGroupSelect01">Select Key</label>
-          <select class="form-select fs-4" id="inputGroupSelect01" name="key">
-            <% for(var i=0; i<keys.length; i++) {%>
-            <option class="" value="<%= keys[i].key %>" name="key" ><%= keys[i].key %></option>
-            <% } %>
-          </select>
-        </div>
+  <body>
+    <div class="container mt-3">
+      <p id="#" class="fs-2 mx-auto text-center text-white fw-bold mt-4">Search Reviews</p>
+      <form action="/search" method="get">
+        <div class="mb-3  mx-auto">
 
-      </div>
-      <button type="submit" class=" btn searchBtn w-100 fs-4">Search</button>
-    </form>
-  </div>
-
-  <hr class="w-75 mx-auto mt-5">
-  <div class="w-100 newCards">
-    <% for(var i=0; i<reviews.length; i++) {%>
-    <div class="nft">
-        <div class='main'>
-          <h2 class="fs-3 text-center "><%= reviews[i].productName %></h2>
-          <img class='tokenImage fs-4 mt-2' src="<%= reviews[i].image%>" alt="NFT">
-          <p class='description fs-4 mt-3'><span class="fw-bold"><%= reviews[i].user %>: </span><%= reviews[i].productReview %> - <%= reviews[i].rating %> </p>
-          <hr/>
-          <div class='tokenInfo'>
-            <div class="price fs-4">
-            <p>Key: <%= reviews[i].key %>
-              <ins>
-                <i class="fa-regular fa-key" id="keyKey"></i>
-              </ins>
-            </p>
-            </div>
-            <div class="duration fs-4">
-              <p><span class="fw-bold">Size:</span> <%= reviews[i].productSize %></p>
-            </div>
+          <div class="input-group mb-3">
+            <span class="input-group-text fs-4 searchLabel fw-bold">Product Name</span>
+            <input type="text" class="form-control fs-4" placeholder="ex: Nike Ski Mask" aria-label="Server"
+              name="product">
+            <label class="input-group-text fs-4 searchLabel ms-3 fw-bold" for="inputGroupSelect01">Select Key</label>
+            <select class="form-select fs-4" id="inputGroupSelect01" name="key">
+              <% for(var i=0; i<keys.length; i++) {%>
+                <option class="" value="<%= keys[i].key %>" name="key">
+                  <%= keys[i].key %>
+                </option>
+                <% } %>
+            </select>
           </div>
-          <hr />
 
-          <div class='creator'>
-            <a target="_blank" href="<%= reviews[i].productLink %>" class="btnCard  fs-5 mb-2 btn fw-bold btn-outline w-50 ms-3 me-3" >Product Link</a>
-            <button type="button" class="btnCard  fs-5 mb-2 btn fw-bold btn-outline w-50 ms-3 me-3" data-bs-toggle="modal" data-bs-target="#exampleModal">Send To Email</button>
-          </div>
         </div>
+        <button type="submit" class=" btn searchBtn w-100 fs-4">Search</button>
+      </form>
     </div>
-    <div class="modal fade mb-5" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
-      <div class="modal-dialog modal-dialog-centered modal-lg">
-        <div class="modal-content">
-          <div class="modal-header">
-            <!-- added text dark to classes!!!!! -->
-            <h1 class="modal-title fs-3 text-dark fw-bold" id="exampleModalLabel">Send Review To Email</h1>
-            <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
-          </div>
-          
-          <form action="/sendEmail" method="post" >
-            <div class="modal-body text-dark">
-              <label for="weightArea" class="form-label fs-4 mt-0">Recipient:</label>
-              <div class="input-group-sm mb-3" id="weightArea">
-                  <input type="text" class="form-control fs-4" placeholder="ex: my@email.com" aria-label="Username" value="" name="email" required>
+
+    <hr class="w-75 mx-auto mt-5">
+    <div class="w-100 newCards">
+      <% for(var i=0; i<reviews.length; i++) {%>
+        <div class="nft">
+          <div class='main'>
+            <h2 class="fs-3 text-center ">
+              <%= reviews[i].productName %>
+            </h2>
+            <img class='tokenImage fs-4 mt-2' src="<%= reviews[i].image%>" alt="NFT">
+            <p class='description fs-4 mt-3'><span class="fw-bold">
+                <%= reviews[i].user %>:
+              </span>
+              <%= reviews[i].productReview %> - <%= reviews[i].rating %>
+            </p>
+            <hr />
+            <div class='tokenInfo'>
+              <div class="price fs-4">
+                <p>Key: <%= reviews[i].key %>
+                    <ins>
+                      <i class="fa-regular fa-key" id="keyKey"></i>
+                    </ins>
+                </p>
+              </div>
+              <div class="duration fs-4">
+                <p><span class="fw-bold">Size:</span>
+                  <%= reviews[i].productSize %>
+                </p>
               </div>
             </div>
-            <div class="modal-footer mx-auto">
-              <button type="submit" class="modalBtn btn btn-outline " data-bs-dismiss="modal">Close</button>
-              <button type="submit" class="modalBtn btn btn-outline ">Send</button>
+            <hr />
+
+            <div class='creator'>
+              <form action="/sendEmail" method="post"> 
+                <input name="productKey" type="hidden" value="<%= reviews[i].productKey %>">
+                <input name="productName" type="hidden" value="<%= reviews[i].productName %>">
+                <input name="productReview" type="hidden" value="<%= reviews[i].productReview %>">
+                <input name="productSize" type="hidden" value="<%= reviews[i].productSize %>">
+                <input name="user" type="hidden" value="<%= reviews[i].user %>">
+                <input name="rating" type="hidden" value="<%= reviews[i].rating %>">
+                <div class="Flex mx-auto">
+                  <a target="_blank" href="<%= reviews[i].productLink %>" class="btnCard  fs-5 mb-2 btn fw-bold btn-outline ms-5 me-4">Product Link</a>
+                  <button type="submit" class="btnCard  fs-5 mb-2 btn fw-bold btn-outline ms-4 me-4" >Send To Email</button>
+                </div>
+              </form>
             </div>
-            <input name="productKey" type="hidden" value="<%= reviews[i].productKey %>">
-            <input name="productName" type="hidden" value="<%= reviews[i].productName %>">
-            <input name="productReview" type="hidden" value="<%= reviews[i].productReview %>">
-            <input name="productSize" type="hidden" value="<%= reviews[i].productSize %>">
-            <input name="user" type="hidden" value="<%= reviews[i].user %>">
-            <input name="rating" type="hidden" value="<%= reviews[i].rating %>">
-          </form>
+          </div>
         </div>
-      </div>
+
+        <% } %>
     </div>
-    <% } %>
-  </div>
-</body>
-<%- include('partials/footer') -%>
+  </body>
+  <%- include('partials/footer') -%>
