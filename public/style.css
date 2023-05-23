@@ -180,8 +180,8 @@ code {
 }
 .nft {
   user-select: none;
-  max-width: 25rem;
-  margin: 3rem;
+  max-width: 29rem;
+  margin: auto;
   margin-top: 1rem;
   margin-bottom: 1rem;
   border: 1px solid #ffffff22;
