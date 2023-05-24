@@ -1,6 +1,7 @@
 const cloudinary = require("../middleware/cloudinary");
 const nodemailer = require('nodemailer');
 require('dotenv').config();
+  
 const Key = require("../models/Key")
 const Review = require("../models/Review")
 
@@ -42,7 +43,7 @@ module.exports = {
         Size - ${size}
         Review - ${review}
         Rated - ${rating}
-        Reviewed By - ${user}
+        Reviewd By - ${user}
         `
       };
       transporter.sendMail(mailOptions, function(error, info){
@@ -170,7 +171,7 @@ module.exports = {
         userEmail: req.user.email
       });
       console.log("Key has been added!");
-      res.redirect("/create");
+      res.redirect("/view");
     } catch (err) {
       console.log(err);
     }

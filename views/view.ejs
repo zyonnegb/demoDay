@@ -1,21 +1,38 @@
 <%- include('partials/header') -%>
 
-    <% for(let i=0; i<keys.length; i++) {%>
-       <div class="card w-50 mx-auto mt-5">
-       <div class="card-header fs-4 fw-bold" name >
-         Key: <%= keys[i].key%> 
-       </div>
-       <div class="card-body">
-         <blockquote class="blockquote mb-0">
-           <p class="fs-4">Feet: <%= keys[i].feet%> </p>
-           <p class="fs-4">Inches: <%= keys[i].inches%> </p>
-           <p class="fs-4">Lbs: <%= keys[i].lbs%> </p>
-           <a href="/delete" class="text-decoration-none" id="trashCan"><span id="trash" class="position-absolute top-0 start-100 translate-middle badge bg-light rounded-pill">
-               <i class="fa fa-trash fs-4" aria-hidden="true"></i>
-           </span></a>
-             </span><footer class="blockquote-footer fs-5 mt-0">Create By: <%= keys[i].user%> <cite title="Source Title">@ <%= keys[i].createdAt%> </cite></footer>
-         </blockquote>
-       </div>
-       </div>
-    <% } %>
-<%- include('partials/footer') -%>
+  <div class="w-100 newCards">
+    <% for(var i=0; i<keys.length; i++) {%>
+      <div class="nft">
+        <div class='main'>
+          <h2 class="fs-3 text-center ">
+            Key: <%= keys[i].key%>
+          </h2>
+
+          <hr class="mt-2">
+          <p class='description fs-4 mt-2'><span class="fw-bold">
+              Feet:
+            </span>
+            6
+          </p>
+          <p class='description fs-4 mt-2'><span class="fw-bold">
+              Inches:
+            </span>
+            08
+          </p>
+          <p class='description fs-4 mt-2'><span class="fw-bold">
+              Lbs:
+            </span>
+            140
+          </p>
+          <hr />
+          <p class="fs-7 mt-2">Create By: <%= keys[i].user%> <cite title="Source Title">@ <%= keys[i].createdAt%>
+              </cite>
+          </p>
+          <hr>
+          <a href="/delete" class="fs-5 mb-1 viewKey btn fw-bold btn-outline ms-5 me-4">Delete Key</a>
+        </div>
+      </div>
+      
+      <% } %>
+  </div>
+      <%- include('partials/footer') -%>

@@ -90,7 +90,7 @@ input, select{
   color: gold;
 }
 #logout{
-  margin-left: 58%;
+  margin-left: 67%;
   background-color: #ee83e5;
   color: white;
   border: 0px;
@@ -128,7 +128,6 @@ input, select{
   color: white;
   text-align: center;
 }
-
 
 .top{
   background-color: rgba(17, 0, 32, 0.5);
@@ -320,8 +319,23 @@ code {
   transform: scale(104%);
   box-shadow: 0px 0px 5px #ee83e5 ;
 }
-
-
+.viewKey{
+  background-color: red ;;
+  color: white;
+}
+.viewKey:hover{
+  color: white;
+  border: 2px solid red ;
+  transform: scale(104%);
+  box-shadow: 0px 0px 5px red ;
+}
+#homeCard{
+  margin-top: 20rem;
+  max-width: 70rem;
+}
+.homeBtns{
+  width: 20rem;
+}
 
 
 /* In order to get the bouncing effect on hover the following code will help: */
